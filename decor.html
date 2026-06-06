@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jahkey Home Decors</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#4F6F52;
+    --secondary:#C97C5D;
+    --light:#F8F5F0;
+    --dark:#1F2933;
+    --text:#4B5563;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:rgba(248,245,240,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:1.8rem;
+    color:var(--primary);
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8%;
+    background:linear-gradient(
+        rgba(79,111,82,0.75),
+        rgba(79,111,82,0.75)
+    ),
+    url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:var(--secondary);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#b86c4d;
+}
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Playfair Display',serif;
+    font-size:2.8rem;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:var(--text);
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product{
+    overflow:hidden;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.product img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h4{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.cta{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+footer{
+    background:#243127;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Jahkey Home Decors</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Transform Your Space Into Something Beautiful</h1>
+        <p>
+            Discover timeless décor pieces crafted to bring warmth,
+            elegance, and personality to every corner of your home.
+        </p>
+        <a href="#collection" class="btn">Explore Collection</a>
+    </div>
+</section>
+<section class="section">
+
+  <div class="section-title">
+    <h2>Featured Collection</h2>
+    <p>Search for your perfect home décor item</p>
+  </div>
+
+<section class="section" id="about">
+     <div class="products" id="products-container">
+        <!-- Products load automatically here -->
+    </div>
+</section>
+
+<section class="section" id="collection">
+  
+</section>
+
+<section class="cta" id="contact">
+    <h2>Create Your Dream Home Today</h2>
+    <p>Explore our latest décor collections and transform your living spaces.</p>
+    <br>
+    <a href="#" class="btn">Shop Now</a>
+
+</section>
+
+<script src="script.js"></script>
+
+<footer>
+        <p>© 2026 Jahkey Home Decors. All Rights Reserved.</p>
+
+</footer>
+</body>
+</html>
