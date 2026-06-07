@@ -12,13 +12,12 @@ const products = [
     description: "Beautiful ceramic vase for home styling.",
     link: "YOUR_AMAZON_AFFILIATE_LINK_2"
   },
-
-  {
-    name: "Luxury Wall Art",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-    description: "Modern artwork to elevate your space.",
-    link: "YOUR_AMAZON_AFFILIATE_LINK_3"
-  },
+{
+  name: "Minimalist Luxury Canvas Art",
+  image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
+  description: "Minimalist canvas wall art for a clean, high-end interior look.",
+  link: "https://www.amazon.com/dp/YOUR_PRODUCT_ID?tag=YOUR_AFFILIATE_TAG"
+},
   {
   name: "Kitchen Counter Organizer",
   image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80",
@@ -66,12 +65,12 @@ const products = [
   link: "YOUR_AMAZON_AFFILIATE_LINK"
 },
 
-  {
-    name: "Luxury Home Decor Accessories",
-    image: "...",
-    description: "...",
-    link: "..."
-  },
+{
+  name: "Modern Luxury Table Decor Set",
+  image: "https://images.unsplash.com/photo-1616627561950-9f746e330187?auto=format&fit=crop&w=800&q=80",
+  description: "Stylish table décor accessories featuring a minimalist luxury design for upscale interiors.",
+  link: "https://www.amazon.com/dp/YOUR_PRODUCT_ID?tag=YOUR_AFFILIATE_TAG"
+},
  {
   name: "Modern Geometric Carpet",
   category: "Rugs & Carpets",
