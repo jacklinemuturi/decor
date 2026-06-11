@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Click Dashboard</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f5f5f5;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  color:#4F6F52;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.name{
+  font-weight:bold;
+}
+
+.count{
+  background:#4F6F52;
+  color:white;
+  padding:5px 12px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 Click Tracking Dashboard</h1>
+
+<div id="dashboard"></div>
+
+<script>
+function loadDashboard() {
+  const data = JSON.parse(localStorage.getItem("clicks") || "{}");
+
+  const container = document.getElementById("dashboard");
+
+  let output = "";
+
+  // convert object → array and sort by clicks
+  const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
+
+  if (sorted.length === 0) {
+    container.innerHTML = "<p style='text-align:center;'>No clicks yet.</p>";
+    return;
+  }
+
+  sorted.forEach(item => {
+    output += `
+      <div class="card">
+        <div class="name">${item[0]}</div>
+        <div class="count">${item[1]} clicks</div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = output;
+}
+
+loadDashboard();
+</script>
+
+</body>
+</html>
