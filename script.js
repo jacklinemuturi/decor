@@ -65,7 +65,7 @@ const products = [
 },
 {
   name: "Luxury Ceramic Flower Vase",
-  image: "https://plus.unsplash.com/premium_photo-1677094766778-4464254cf7b6?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80",
   description: "Minimalist luxury ceramic vase designed for dried flowers, pampas grass, or fresh floral arrangements.",
   link: "https://amzn.to/4unR4pl"
 },
@@ -100,15 +100,15 @@ const products = [
 },
 
 ];
-let clicks = JSON.parse(localStorage.getItem("clicks") || "{}");
+window.trackAmazonClick = function(productName) {
+  let clicks = JSON.parse(localStorage.getItem("clicks") || "{}");
 
-function trackAmazonClick(productName) {
   clicks[productName] = (clicks[productName] || 0) + 1;
+
   localStorage.setItem("clicks", JSON.stringify(clicks));
 
-  console.log("Click tracked:", productName);
-  console.log("All clicks:", clicks);
-}
+  console.log("Clicked:", productName);
+};
 const container = document.getElementById("products-container");
 
 let output = "";
