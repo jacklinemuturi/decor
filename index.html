@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +28,14 @@ body{
     background:var(--light);
     color:var(--dark);
     line-height:1.6;
-
 }
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
+/* HEADER */
 header{
     position:fixed;
     width:100%;
@@ -76,30 +78,24 @@ header{
     color:var(--secondary);
 }
 
+/* HERO */
 .hero{
-    min-height:100vh;
+    min-height:80vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:120px 8%;
-    background:linear-gradient(
-        rgba(79,111,82,0.75),
-        rgba(79,111,82,0.75)
-    ),
-    url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    color:white;
+    padding:60px 5%;
+    color:#4F6F52;
     text-align:center;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:1500px;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:4rem;
+    font-size:3rem;
     margin-bottom:20px;
 }
 
@@ -108,15 +104,17 @@ header{
     margin-bottom:35px;
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    background:var(--secondary);
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;   /* reduced from 15px 35px */
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;      /* smaller text */
+    transition: 0.3s;
 }
 
 .btn:hover{
@@ -124,6 +122,7 @@ header{
     background:#b86c4d;
 }
 
+/* SECTIONS */
 .section{
     max-width:1200px;
     margin:auto;
@@ -132,7 +131,7 @@ header{
 
 .section-title{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:20px;
 }
 
 .section-title h2{
@@ -145,9 +144,10 @@ header{
     color:var(--text);
 }
 
+/* FEATURES */
 .features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
     gap:30px;
 }
 
@@ -168,34 +168,75 @@ header{
     margin-bottom:15px;
 }
 
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+/* PRODUCTS GRID */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.product{
-    overflow:hidden;
-    border-radius:20px;
-    background:white;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+/* PRODUCT CARD */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease;
 }
 
-.product img{
-    width:140%;
-    height:280px;
-    object-fit:cover;
+.product:hover {
+    transform: translateY(-5px);
 }
 
-.product-info{
-    padding:20px;
+/* IMAGE CONTAINER */
+.image-container {
+    position: relative;
+    overflow: hidden;
 }
 
-.product-info h4{
-    color:var(--primary);
-    margin-bottom:10px;
+/* IMAGE ZOOM */
+.image-container img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
+.product:hover .image-container img {
+    transform: scale(1.08);
+}
+
+/* IMAGE OVERLAY */
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.3),
+        transparent
+    );
+
+    color: white;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+/* PRODUCT INFO */
+.product-info {
+    padding: 10px;
+}
+
+.product-info h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* CTA */
 .cta{
     background:var(--primary);
     color:white;
@@ -207,40 +248,29 @@ header{
     font-family:'Playfair Display',serif;
     font-size:3rem;
     margin-bottom:15px;
-    
-}
-.product-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:10px;
 }
 
-.product{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-}
-
-
+/* FOOTER */
 footer{
     background:#243127;
     color:white;
     text-align:center;
-
-    
+    padding:20px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-    .hero h1{
-        font-size:2.8rem;
 
+    .hero h1{
+        font-size:2.2rem;
     }
 
     .nav-links{
         display:none;
+    }
 
+    .image-container img {
+        height: 220px;
     }
 }
 </style>
@@ -272,7 +302,6 @@ footer{
 <section class="section" id="collection">
     <div class="section-title">
         <h2>Featured Collection</h2>
-        <p>Search for your perfect home décor item</p>
     </div>
 
     <div class="products" id="products-container">
@@ -301,13 +330,6 @@ footer{
   
 </section>
 
-<section class="cta" id="contact">
-    <h2>Create Your Dream Home Today</h2>
-    <p>Explore our latest décor collections and transform your living spaces.</p>
-    <br>
-    <a href="#" class="btn">Shop Now</a>
-
-</section>
 
 <script src="script.js"></script>
 
