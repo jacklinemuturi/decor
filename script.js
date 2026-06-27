@@ -18,10 +18,10 @@ const products = [
     link: "https://amzn.to/4eqgiP7"
   },
   {
-    name: "Kitchen Counter Organizer",
+    name: "Kitchen Organization and Storage",
     image: "https://images.unsplash.com/photo-1598305420414-f1b90cd687b4?w=500",
-    description: "save your kitchen space",
-    link: "https://amzn.to/4e4zwKd"
+    description: "Kitchen Organization Ideas for a Clutter-Free and Functional Space",
+    link: "https://amzn.to/3RakKZv"
   },
   {
     name: "Inspirational Office Wall Art",
@@ -127,10 +127,10 @@ products.forEach(product => {
       <div class="image-container">
         <img src="${product.image}" alt="${product.name}">
 
-        <div class="image-overlay">
-          <h4>${product.name}</h4>
-          <p>${(product.description || "").substring(0, 60)}...</p>
-        </div>
+      <div class="image-overlay">
+  <h4>${product.name}</h4>
+  <p>${(product.description || "").substring(0, 80)}</p>
+</div>
       </div>
 
       <div class="product-info">
